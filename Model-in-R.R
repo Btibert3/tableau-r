@@ -11,8 +11,5 @@ pred = predict(tree, newdata=iris, type="class")
 pred = as.character(pred)
 df = cbind(iris, pred)
 
-## write the data to a MySQL database
-## the connection to tableau references a pre-built DSN on Windows
-library(RODBC)
-ch = odbcConnect("tableau")
-sqlSave(ch, df, tablename="usecase", rownames=F)
+## save the scored dataframe to an R datafile
+save(df, file="test-pred.rdata")
