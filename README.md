@@ -19,7 +19,7 @@ almost everything I need entirely within `R`.  In theory, my ideal workflow woul
 4. Save the modeled data to Tableau so I can create dashboard reports
 5. Deploy my  models to __production__ (or whatever that means)
 
-To be fair, Tableau has released both `C++` and `python` versions of their API.  For someone way better
+To be fair, Tableau has released both `C++` and `python` versions of their API.  For those way better
 at programming than myself, it appears that it should be possible to build an 
 `R` package to interface with the API.
 
