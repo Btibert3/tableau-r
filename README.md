@@ -25,7 +25,7 @@ at programming than myself, it appears that it should be possible to build an
 
 In my head, this is what a some `R` code would look like:
 
-
+```R
   library(tableauR)
   library(RODBC)
   # create connection
@@ -37,6 +37,7 @@ In my head, this is what a some `R` code would look like:
   df = transform(df, pred = predict(mod, newdata=df, type="response")
   # save the scored data to a Tableau Data Extract
   df2TDE(df, file="r-df.tde")
+```
 
 
 
