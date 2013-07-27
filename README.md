@@ -23,7 +23,7 @@ To be fair, Tableau has released both `C++` and `python` versions of their API. 
 at programming than myself, it appears that it should be possible to build an 
 `R` package to interface with the API.
 
-In my head, this is what a some `R` code would look like:
+In my head, this is what a some `R` code might look like if an `R` package were available:
 
 ```R
   library(tableauR)
