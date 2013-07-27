@@ -25,19 +25,19 @@ at programming than myself, it appears that it should be possible to build an
 
 In my head, this is what a some `R` code would look like:
 
-`
-library(tableauR)
-library(RODBC)
-# create connection
-ch = odbcConnect("DSN", "USER", "PWD")
-# get the data
-df = sqlQuery(ch, "SELECT * FROM OURTABLE")
-# basic regression
-mod = glm(x ~ y, data=df)
-df = transform(df, pred = predict(mod, newdata=df, type="response")
-# save the scored data to a Tableau Data Extract
-df2TDE(df, file="r-df.tde")
-`
+
+  library(tableauR)
+  library(RODBC)
+  # create connection
+  ch = odbcConnect("DSN", "USER", "PWD")
+  # get the data
+  df = sqlQuery(ch, "SELECT * FROM OURTABLE")
+  # basic regression
+  mod = glm(x ~ y, data=df)
+  df = transform(df, pred = predict(mod, newdata=df, type="response")
+  # save the scored data to a Tableau Data Extract
+  df2TDE(df, file="r-df.tde")
+
 
 
 This is very annoying, but it leads me to my repo.
