@@ -42,25 +42,36 @@ In my head, this is what a some `R` code would look like:
   df2TDE(df, file="r-df.tde")
 ```
 
-
-
-
-
-This is very annoying, but it leads me to my repo.
+This simple interface isnt available at the moment, but this leads me to the purpose of this repo.
 
 I saw [this PR story](http://www.prweb.com/releases/2013/7/prweb10902821.htm) and figured I could hack something
-together pretty quickly along the same lines.
+together pretty quickly along the same lines by:
+
+- modeling my data in R
+- save the dataframe as an `rdata` file
+- use `Rpy2` from within python to read the `dataframe` into `python`
+- convert it to a `pandas` dataframe
+- use the pandas dataframe to pseudo-intelligently build the `Data Extract`
 
 Because I am trying to get my python skills on par with R, I took this as opportunity to show a trivial example
-of how we could use R to model/score our data, and leverage the Tableau Python API to create a Data Extract.
-For this exercise, I used the `pandas` libary, which aims to be a (superior) python-equivalent to the `data.frame` 
-in `R`.  
+of how we could use R to model/score our data (using the `R` Script), and leverage the Tableau Python API 
+to create a Data Extract.
 
-The included `ipython` notebook was written never meant to demonstrate effectient python code, but simply
+The `pandas` libary, which aims to be a (superior) python-equivalent to the `data.frame` is pretty awesome
+and appears to have a growing development community.  
+
+The included `ipython` notebook was never meant to demonstrate effectient python code, but simply aims
 to be a proof-of-concept for the Python and Tableau communities alike.  In theory, we don't really need to use
-R; there are quite a few of examples as to how we could entirely access, clean, and model our data entirely 
-in python.
+R; there are quite a few of examples as to how we could entirely clean and 
+[model](http://scikit-learn.org/stable/) our data entirely in python.  
 
-Oh wait, did I mention that the API appears to only work on Windows machines because the API requires the
-`.dll` files that are found in Windows Applications?
+To be honest, the only
+thing holding me back right now from diving in head first to `python` is the difficulty in connecting to my
+`Oracle` database at work.
+
+*ONE LAST THING!* Did I mention that the API appears to only work on Windows machines?!?! 
+This is because the API seemingly requires the `.dll` files that are found in Windows Applications!  
+
+I am not sure that Tableau realizes that the majority of the developer community doesn't have access to, or 
+*hates*, Windows development environments.
 
